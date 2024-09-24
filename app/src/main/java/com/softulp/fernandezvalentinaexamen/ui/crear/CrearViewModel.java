@@ -39,6 +39,10 @@ public class CrearViewModel extends AndroidViewModel {
                 int codeInt = Integer.parseInt(code);
                 double priceDouble = Double.parseDouble(price);
                 int stockInt = Integer.parseInt(stock);
+                if (codeInt <= 0 || priceDouble <= 0){
+                    Toast.makeText(getApplication(), "Debe ingresar un codigo y precio valido", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Producto nuevoP = new Producto(codeInt, desc, priceDouble, stockInt);
                 if (isInList(codeInt)){
                     Toast.makeText(getApplication(), "El producto con el código " + codeInt + " ya existe", Toast.LENGTH_SHORT).show();

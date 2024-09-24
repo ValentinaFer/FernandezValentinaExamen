@@ -36,8 +36,8 @@ public class ProductosListAdapter extends RecyclerView.Adapter<ProductosListAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProducto holder, int position) {
-        holder.tvCode.setText("Cod. int:"+productoList.get(position).getCode());
-        holder.tvStock.setText("Stock:"+ productoList.get(position).getStock());
+        holder.tvCode.setText(""+productoList.get(position).getCode());
+        holder.tvStock.setText(""+ productoList.get(position).getStock());
         holder.tvDesc.setText(productoList.get(position).getDescription());
         holder.tvPrice.setText("$"+String.format(Locale.getDefault(), "%.2f", productoList.get(position).getPrice()));
     }
